@@ -14,7 +14,9 @@ app.use("/users", userRoutes);
 app.use("/connection", connectionRoutes);
 app.use("/chat", chatRoutes);
 
-await mongoose.connect("mongodb://localhost:27017/new_project");
+await mongoose.connect(
+  "mongodb+srv://somashekharym:somu7676@cluster0.bsnlnmm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+);
 console.log("db connected successufully");
 
 app.listen(8080, () => {
