@@ -1,0 +1,56 @@
+.head {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.connectionRequest {
+  border: 1px solid rgb(68, 68, 68);
+}
+
+.connectionRequest div {
+  display: flex;
+  /* border: 1px solid red; */
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  gap: 1.5rem;
+  padding-inline: 1rem;
+  padding-block: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.connectionRequest > div button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid silver;
+  padding-inline: 0.6rem;
+  padding-block: 0.3rem;
+  border-radius: 10px;
+}
+
+.userRequest {
+  border: 1px solid rgb(68, 68, 68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding-inline: 1rem;
+  margin: 1rem;
+}
+
+.userRequest button {
+  background-color: rgb(116, 111, 111);
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .connectionRequest {
+    position: absolute;
+    width: 100%;
+    left: 0.5rem;
+    height: 90vh;
+  }
+}

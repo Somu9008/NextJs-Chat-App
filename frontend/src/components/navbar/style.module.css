@@ -1,0 +1,162 @@
+.navbar {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(108deg, rgb(0, 0, 255), rgb(255, 0, 0));
+  padding-block: 0.1rem;
+  padding-top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 3000;
+}
+
+.navbar > div {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-inline: 3rem;
+  padding-block: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.948);
+  /* border: 1px solid white; */
+}
+
+nav .nav_left {
+  /* border: 1px solid red; */
+  width: 30%;
+  background: transparent;
+  text-align: start;
+}
+
+nav .nav_left h1 {
+  color: white;
+  font-style: none;
+  background-color: transparent;
+  color: transparent;
+  font-size: 2rem;
+  margin: 0;
+  background: linear-gradient(108deg, rgb(0, 102, 255), rgba(255, 0, 0, 0.914));
+  -webkit-background-clip: text;
+  /* background: linear-gradient(blue, red); */
+}
+
+nav .nav_right {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background: transparent;
+  align-items: center;
+  /* border: 1px solid yellow; */
+
+  /* border: 1px solid white; */
+}
+
+nav .nav_right button {
+  background-color: transparent;
+  border: none;
+  background: linear-gradient(108deg, red, blue);
+  padding-inline: 2.5rem;
+  padding-block: 0.5rem;
+  border-radius: 0.6rem;
+}
+
+nav .userProfile {
+  /* border: 1px solid red; */
+  position: relative;
+}
+
+nav .userProfile .menu {
+  position: absolute;
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  left: -2rem;
+  /* border: 1px solid yellow; */
+  visibility: hidden;
+  background-color: transparent;
+  height: 5rem;
+  z-index: 111;
+}
+
+@media (max-width: 1260px) {
+  nav .nav_middle {
+    width: 5%;
+  }
+  nav .nav_right {
+    justify-content: center;
+    gap: 0.5rem;
+    width: 50%;
+  }
+
+  nav .nav_left h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1000px) {
+  nav .nav_middle {
+    width: 1%;
+  }
+  nav .nav_right {
+    justify-content: center;
+    gap: 1rem;
+    width: 60%;
+  }
+
+  nav .nav_left h1 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 850px) {
+  nav .nav_right button {
+    padding-inline: 1.2rem;
+    padding-block: 0.5rem;
+  }
+}
+
+@media (max-width: 850px) {
+  nav .nav_left h1 {
+    font-size: larger;
+  }
+}
+
+@media (max-width: 700px) {
+  nav .nav_right button {
+    justify-content: space-between;
+    width: 60%;
+    display: none;
+  }
+
+  nav .nav_right .userProfile .menu button {
+    display: block;
+    width: 100%;
+  }
+  .userProfile:hover .menu {
+    visibility: visible;
+  }
+  nav .nav_middle {
+    width: 50%;
+  }
+  nav .nav_left {
+    width: 60%;
+  }
+
+  nav .nav_right {
+    width: 50%;
+    text-align: end;
+  }
+
+  .navbar > div {
+    padding: 1rem;
+    padding-block: 0.5rem;
+  }
+}
+@media (max-width: 560px) {
+  nav .nav_left h1 {
+    font-size: small;
+  }
+}

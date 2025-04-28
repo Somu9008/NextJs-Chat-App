@@ -1,0 +1,114 @@
+.loginAndSignUp {
+  /* border: 1px solid red; */
+  height: 80vh;
+  display: flex;
+}
+
+.loginAndSignUp .leftLogin {
+  /* border: 1px solid white; */
+  width: 50%;
+}
+.loginAndSignUp .rightLogin {
+  /* border: 1px solid rgb(255, 255, 255); */
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.loginAndSignUp .rightLogin form {
+  /* border: 1px solid red; */
+  width: 80%;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.loginAndSignUp .rightLogin form h1 {
+  color: transparent;
+  background: linear-gradient(108deg, red, rgb(0, 123, 255));
+  -webkit-background-clip: text;
+  background-size: 200px;
+  text-transform: capitalize;
+  margin: auto;
+  /* border: 1px solid red; */
+  width: 15rem;
+}
+
+.loginAndSignUp .rightLogin form div {
+  width: 80%;
+  margin: auto;
+  /* border: 1px solid green; */
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.loginAndSignUp .rightLogin form div input {
+  width: 100%;
+  margin: auto;
+  outline: none;
+  border: none;
+  border: 1px solid silver;
+  padding: 0.8rem;
+}
+
+.loginAndSignUp .rightLogin .loginBtn {
+  width: 80%;
+  padding: 1rem;
+  background: linear-gradient(108deg, red, blue);
+  border: none;
+}
+
+.loginAndSignUp .rightLogin form div .anchorLink {
+  border: none;
+  background-color: transparent;
+  color: rgb(0, 119, 255);
+  font-size: 1rem;
+}
+
+.loginAndSignUp .rightLogin form div .anchorLink:hover {
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+@media (max-width: 850px) {
+  .loginAndSignUp .rightLogin {
+    width: 80%;
+  }
+  .loginAndSignUp .rightLogin form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .loginAndSignUp .rightLogin {
+    width: 100%;
+  }
+  .loginAndSignUp .rightLogin form {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 450px) {
+  .loginAndSignUp .rightLogin {
+    width: 100%;
+  }
+  .loginAndSignUp .rightLogin form {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  /* .loginAndSignUp .leftLogin { */
+  /* border: 1px solid white; */
+  /* width: 10%;
+  } */
+  .loginAndSignUp {
+    /* border: 1px solid red; */
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+}

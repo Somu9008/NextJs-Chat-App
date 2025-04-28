@@ -1,0 +1,67 @@
+.popUp {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  height: 6vh;
+  width: 30%;
+  background: linear-gradient(
+    108deg,
+    rgba(2, 99, 255, 0.842),
+    rgb(255, 0, 157)
+  );
+  border-radius: 0.1rem;
+  animation: popUpAnimation 0.4s ease-in-out forwards;
+  text-align: center;
+  transition: all 0.5s;
+  padding: 2rem;
+  opacity: 0;
+  z-index: 2000;
+  border-radius: 1rem;
+
+  box-shadow: 2px 2px 8px rgb(0, 0, 0);
+}
+
+.popUp .message {
+  color: rgb(255, 251, 251);
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.3rem;
+  height: 95%;
+  align-items: center;
+  /* border: 1px solid black; */
+  background-color: transparent;
+}
+
+.popUp .message p {
+  background-color: transparent;
+}
+
+.popUp .message button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-weight: bold;
+  color: wheat;
+  border: 2px solid rgb(123, 167, 255);
+  border-radius: 50%;
+  padding-inline: 0.2rem;
+  padding-block: 0.1rem;
+}
+
+@keyframes popUpAnimation {
+  from {
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    display: none;
+    z-index: 999;
+  }
+  to {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    opacity: 1;
+    z-index: 999;
+    display: block;
+  }
+}

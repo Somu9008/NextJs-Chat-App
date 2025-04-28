@@ -1,0 +1,16 @@
+.loader {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-bottom: 5px solid rgb(0, 37, 244);
+  animation: myAnimation 1s linear infinite;
+}
+
+@keyframes myAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,141 @@
+.userChat {
+  /* border: 1px solid rgb(220, 214, 214); */
+  height: 83vh;
+  position: fixed;
+  z-index: 1;
+  width: 50%;
+}
+
+.chat {
+  overflow-y: auto;
+  height: 70vh; /* or any fixed height */
+}
+
+.chatNav {
+  box-shadow: 2px 2px 8px rgb(45, 45, 45);
+  padding-inline: 2rem;
+  padding-block: 0.4rem;
+  position: sticky;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat_user {
+  /* border: 1px solid green; */
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.chat_user div p {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.chat {
+  height: 62vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  scroll-snap-type: proximity;
+  scroll-behavior: auto;
+}
+
+.inputfiled {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  /* border: 1px solid yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputfiled input {
+  width: 80%;
+  padding: 1rem;
+  margin: auto;
+}
+
+.inputfiled button {
+  padding: 1rem;
+  background-color: rgb(33, 106, 195);
+  width: 8rem;
+}
+
+.leftChat {
+  display: flex;
+  justify-content: start;
+  padding-left: 2rem;
+}
+.leftChat p {
+  padding-inline: 1rem;
+  padding-block: 0.2rem;
+  /* border: 1px solid white; */
+  width: fit-content;
+  background-color: rgba(187, 184, 184, 0.308);
+  border-radius: 0.4rem;
+  margin: 0.8rem;
+}
+
+.leftChat p span {
+  background-color: transparent;
+  font-size: 0.6rem;
+}
+
+.RightChat {
+  display: flex;
+  justify-content: end;
+}
+
+.RightChat p {
+  text-align: end;
+  padding-inline: 1rem;
+  padding-block: 0.1rem;
+  /* border: 1px solid white; */
+  width: fit-content;
+  background-color: rgba(187, 184, 184, 0.308);
+  border-radius: 0.4rem;
+  margin: 0.8rem;
+}
+.RightChat p span {
+  background-color: transparent;
+  font-size: 0.6rem;
+  color: rgb(181, 180, 180);
+}
+
+@media (max-width: 1100px) {
+  .userChat {
+    width: 70%;
+  }
+}
+@media (max-width: 640px) {
+  .userChat {
+    width: 55%;
+  }
+  .chatNav {
+    padding-inline: 1rem;
+  }
+
+  .leftChat {
+    padding-left: 0rem;
+    font-size: 0.9rem;
+  }
+  .RightChat {
+    padding-left: 0rem;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 490px) {
+  .userChat {
+    /* display: none; */
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 50;
+  }
+}
