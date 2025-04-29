@@ -99,6 +99,21 @@ export const getUserConnect = async (req, res) => {
   }
 };
 
+export const uploadePrifilePicture = async (req, res) => {
+  try {
+    const { token } = req.body;
+
+    const user = await User.findOne({ token });
+
+    if (!user) return res.status(400).json({ message: "user not found" });
+
+    user.profilePicture = req.file.filename;
+
+    await user.save();
+    return res.status(200).json({ message: "image uploaded" });
+  } catch (error) {}
+};
+
 export const getUserConnectedChat = async (req, res) => {
   try {
     const { connectionId, token } = req.query;
