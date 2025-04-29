@@ -150,3 +150,27 @@ export const sendMessage = createAsyncThunk(
     }
   }
 );
+
+export const uploadProfilePicture = createAsyncThunk(
+  "/user/profilePicture",
+  async (profilePicture, thunkApi) => {
+    const formData = new FormData();
+    formData.append("profilePicture", profilePicture.profilePicture);
+    formData.append("token", localStorage.getItem("token"));
+    try {
+      const response = await clintServer.post(
+        "/users/uploadprofilePicture",
+        formData,
+        {
+          headers: {
+            "Content-Type": " multipart/form-data ",
+          },
+        }
+      );
+
+      return thunkApi.fulfillWithValue(response.data);
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);

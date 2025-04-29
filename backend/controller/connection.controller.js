@@ -38,7 +38,7 @@ export const whatAreMyConnectionRequestsent = async (req, res) => {
 
     const connectionRequests = await Connections.find({
       userId: user._id,
-    }).populate("connectionId", "name username email");
+    }).populate("connectionId", "name username email profilePicture");
 
     return res.status(200).json({ myRequests: connectionRequests });
   } catch (error) {
@@ -56,7 +56,7 @@ export const getMyConnectionRequests = async (req, res) => {
 
     const connection = await Connections.find({
       connectionId: user.id,
-    }).populate("userId", "name username email");
+    }).populate("userId", "name username email profilePicture");
 
     return res.status(200).json({ userRequests: connection });
   } catch (error) {

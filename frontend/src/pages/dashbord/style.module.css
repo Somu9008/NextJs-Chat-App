@@ -54,6 +54,7 @@
   border-radius: 50%;
   height: 60px;
   width: 60px;
+  object-position: center;
 }
 
 .userContact .userInfo {
@@ -84,6 +85,12 @@
   align-items: center;
   width: 70%;
   gap: 0.5rem;
+}
+
+.rightSideBar .topUserContact .topUserInfo img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
 
 .rightSideBar .topUserContact button {

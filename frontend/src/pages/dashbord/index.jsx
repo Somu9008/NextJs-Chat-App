@@ -10,14 +10,17 @@ import {
   getUserChat,
   sendConnectionRequest,
   sendRequest,
+  uploadProfilePicture,
   whatareMyConnectionrequests,
 } from "@/redux/action/userAction";
+import { baseURL } from "@/config";
 
 export default function Dashbord({ children }) {
   const [message, setMessage] = useState("");
   const [isConnect, setIsConnect] = useState(false);
   const [acceptedConnection, setAcceptedConnection] = useState(false);
   const [count, setCount] = useState(false);
+  const [profilePicture, setprofilePicture] = useState("");
 
   const userState = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -68,7 +71,10 @@ export default function Dashbord({ children }) {
                     );
                   }}
                 >
-                  <img src="" alt="" />
+                  <img
+                    src={`${baseURL}/${user.userId.profilePicture}`}
+                    alt=""
+                  />
                   <div className={style.userInfo}>
                     <h4>@{user.userId.username}</h4>
                     <div>
@@ -99,7 +105,10 @@ export default function Dashbord({ children }) {
                     );
                   }}
                 >
-                  <img src="" alt="" />
+                  <img
+                    src={`${baseURL}/${user.connectionId.profilePicture}`}
+                    alt=""
+                  />
                   <div className={style.userInfo}>
                     <h4>@{user.connectionId.username}</h4>
                     <div>
@@ -124,7 +133,10 @@ export default function Dashbord({ children }) {
               return (
                 <div className={style.topUserContact}>
                   <div className={style.topUserInfo}>
-                    <img src="" alt="" />
+                    <img
+                      src={`${baseURL}/${user.connectionId.profilePicture}`}
+                      alt=""
+                    />
                     <h4>@{user.connectionId.username}</h4>
                   </div>
 
@@ -154,7 +166,7 @@ export default function Dashbord({ children }) {
               return (
                 <div className={style.topUserContact}>
                   <div className={style.topUserInfo}>
-                    <img src="" alt="" />
+                    <img src={`${baseURL}/${user.profilePicture}`} alt="" />
                     <h4>@{user.username}</h4>
                   </div>
 

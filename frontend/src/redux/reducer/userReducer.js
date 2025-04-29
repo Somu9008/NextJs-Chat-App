@@ -12,6 +12,7 @@ import {
   acceptRequest,
   sendMessage,
   getUserChat,
+  uploadProfilePicture,
 } from "../action/userAction.js";
 
 const initialState = {
@@ -93,6 +94,9 @@ const userSlice = createSlice({
         state.userChat = action.payload.userChat;
         state.chatusername = action.payload.user?.username;
         state.chatUserId = action.payload.user?._id;
+      })
+      .addCase(uploadProfilePicture.fulfilled, (state, action) => {
+        state.message = action.payload.message;
       });
   },
 });

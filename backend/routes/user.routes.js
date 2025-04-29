@@ -5,25 +5,26 @@ import {
   userLogin,
   userRegister,
 } from "../controller/user.controller.js";
+import multer, { diskStorage } from "multer";
 
 const router = express.Router();
 
-const storage = diskStorage({
+const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "/uploades");
+    cb(null, "uploades/");
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname);
   },
 });
 
-const uploade = multer({ Storage: storage });
+const uploade = multer({ storage: storage });
 
 router.route("/register").post(userRegister);
 router.route("/login").post(userLogin);
 router.route("/all_users").post(getAllUser);
 router
-  .route("/uplode_profilePicture", uploade.single("profilePicture"))
-  .post(uploadePrifilePicture);
+  .route("/uplodeprofilePicture")
+  .post(uploade.single("profilePicture"), uploadePrifilePicture);
 
 export default router;

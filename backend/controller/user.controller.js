@@ -107,11 +107,16 @@ export const uploadePrifilePicture = async (req, res) => {
 
     if (!user) return res.status(400).json({ message: "user not found" });
 
-    user.profilePicture = req.file.filename;
+    await User.updateOne({
+      _id: user._id,
+      profilePicture: req.file.filename,
+    });
 
     await user.save();
     return res.status(200).json({ message: "image uploaded" });
-  } catch (error) {}
+  } catch (error) {
+    return res.status(400).json({ message: error.message });
+  }
 };
 
 export const getUserConnectedChat = async (req, res) => {

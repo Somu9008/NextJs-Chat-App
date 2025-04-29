@@ -3,14 +3,24 @@ import style from "./style.module.css";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/redux/reducer/userReducer";
-import { getMyConnectionRequest } from "@/redux/action/userAction";
+import {
+  getMyConnectionRequest,
+  uploadProfilePicture,
+} from "@/redux/action/userAction";
+import { baseURL } from "@/config";
 
 export default function Navbar() {
   const [countRequest, setCountRequest] = useState(0);
+  const [profilePicture, setProfilePicture] = useState();
   const userState = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const router = useRouter();
+
+  useEffect(() => {
+    dispatch(uploadProfilePicture({ profilePicture: profilePicture }));
+  }, [profilePicture]);
+
   useEffect(() => {
     const count = userState.userRequests.filter((user) => {
       if (user.isContected !== true) {
@@ -84,6 +94,23 @@ export default function Navbar() {
               </button>
               <div className={style.userProfile}>
                 <h3>{userState.userInfo.name}</h3>
+                <div className={style.userPicture}>
+                  <img
+                    // src={`${baseURL}/${userState.userInfo.user.profilePicture}`}
+
+                    src={`${baseURL}/${userState.userInfo.profilePicture}`}
+                    alt=""
+                  />
+                  <input
+                    type="file"
+                    hidden
+                    id="profilePicture"
+                    onChange={(e) => {
+                      setProfilePicture(e.target.files[0]);
+                    }}
+                  />
+                  <label htmlFor="profilePicture">+</label>
+                </div>
                 <div className={style.menu}>
                   <button
                     onClick={() => {

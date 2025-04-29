@@ -16,7 +16,8 @@ app.use("/connection", connectionRoutes);
 app.use("/chat", chatRoutes);
 
 await mongoose.connect(
-  "mongodb+srv://somashekharym:somu7676@cluster0.bsnlnmm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+  "mongodb://localhost:27017/new_project"
+  // "mongodb+srv://somashekharym:somu7676@cluster0.bsnlnmm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 );
 console.log("db connected successufully");
 
