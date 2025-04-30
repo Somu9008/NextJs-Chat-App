@@ -94,23 +94,24 @@ export default function Navbar() {
                 logout
               </button>
               <div className={style.userProfile}>
-                <h3>{userState.userInfo.name}</h3>
+                <h3>Hey,{userState.userInfo.name}</h3>
                 <div className={style.userPicture}>
-                  <img
-                    // src={`${baseURL}/${userState.userInfo.user.profilePicture}`}
-
-                    src={`${baseURL}/${userState.userInfo.profilePicture}`}
-                    alt=""
-                  />
-                  <input
-                    type="file"
-                    hidden
-                    id="profilePicture"
-                    onChange={(e) => {
-                      setProfilePicture(e.target.files[0]);
-                    }}
-                  />
-                  <label htmlFor="profilePicture">+</label>
+                  <div>
+                    <img
+                      // src={`${baseURL}/${userState.userInfo.user.profilePicture}`}
+                      src={`${baseURL}/${userState.userInfo.profilePicture}`}
+                      alt=""
+                    />
+                    <input
+                      type="file"
+                      hidden
+                      id="profilePicture"
+                      onChange={(e) => {
+                        setProfilePicture(e.target.files[0]);
+                      }}
+                    />
+                    <label htmlFor="profilePicture">+</label>
+                  </div>
                 </div>
                 <div className={style.menu}>
                   <button

@@ -16,8 +16,8 @@
   margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  padding-inline: 3rem;
+  justify-content: space-between;
+  padding-inline: 2rem;
   padding-block: 0.5rem;
   background-color: rgba(0, 0, 0, 0.948);
   /* border: 1px solid white; */
@@ -54,18 +54,39 @@ nav .nav_right {
   /* border: 1px solid white; */
 }
 
-nav .userPicture img {
+nav .userProfile h3 {
+  color: rgb(255, 5, 134);
+  text-transform: uppercase;
+}
+
+nav .userPicture div {
+  /* border: 1px solid red; */
+  display: flex;
+  position: relative;
+}
+
+nav .userPicture div label {
+  font-size: 2rem;
+  position: absolute;
+  right: -7px;
+  bottom: -7px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+nav .userPicture div img {
   background-size: cover;
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  border: 3px solid rgb(204, 2, 123);
 }
 
 nav .nav_right button {
   background-color: transparent;
   border: none;
   background: linear-gradient(108deg, red, blue);
-  padding-inline: 2.5rem;
+  padding-inline: 2rem;
   padding-block: 0.5rem;
   border-radius: 0.6rem;
 }
@@ -92,6 +113,8 @@ nav .userProfile .menu {
   background-color: transparent;
   height: 5rem;
   z-index: 111;
+  top: 2.5rem;
+  left: 1rem;
 }
 
 @media (max-width: 1260px) {
@@ -104,18 +127,22 @@ nav .userProfile .menu {
     width: 50%;
   }
 
+  nav .nav_right button {
+    padding-inline: 0.6rem;
+  }
+
   nav .nav_left h1 {
     font-size: 1.5rem;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   nav .nav_middle {
     width: 1%;
   }
   nav .nav_right {
     justify-content: center;
     gap: 1rem;
-    width: 60%;
+    width: 70%;
   }
 
   nav .nav_left h1 {
@@ -127,6 +154,18 @@ nav .userProfile .menu {
   nav .nav_right button {
     padding-inline: 1.2rem;
     padding-block: 0.5rem;
+  }
+
+  nav .nav_right button {
+    padding-inline: 0.8rem;
+    font-size: 0.6rem;
+  }
+
+  nav .userProfile h3 {
+    color: rgb(255, 5, 193);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin: 0.2rem;
   }
 }
 
@@ -141,6 +180,13 @@ nav .userProfile .menu {
     justify-content: space-between;
     width: 60%;
     display: none;
+  }
+
+  nav .userProfile h3 {
+    color: rgb(255, 5, 193);
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    margin: 0.2rem;
   }
 
   nav .nav_right .userProfile .menu button {
