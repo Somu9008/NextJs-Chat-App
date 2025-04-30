@@ -103,17 +103,21 @@ export const uploadePrifilePicture = async (req, res) => {
   try {
     const { token } = req.body;
 
-    const user = await User.findOne({ token });
+    let user = await User.findOne({ token });
 
     if (!user) return res.status(400).json({ message: "user not found" });
 
-    await User.updateOne({
-      _id: user._id,
-      profilePicture: req.file.filename,
-    });
+    await User.findByIdAndUpdate(
+      {
+        _id: user._id,
+      },
+      { profilePicture: req.file.filename }
+    );
 
     await user.save();
-    return res.status(200).json({ message: "image uploaded" });
+    return res
+      .status(200)
+      .json({ message: "image uploaded", image: req.file.filename });
   } catch (error) {
     return res.status(400).json({ message: error.message });
   }

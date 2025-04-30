@@ -14,10 +14,14 @@ export const getUserChat = async (req, res) => {
     });
 
     if (!chatUser) {
-      return res.status(200).json({ userChat: [], user }); // No chat yet
+      return res
+        .status(200)
+        .json({ userChat: [], user, image: user.profilePicture }); // No chat yet
     }
 
-    return res.status(200).json({ userChat: chatUser.userChat, user });
+    return res
+      .status(200)
+      .json({ userChat: chatUser.userChat, user, image: user.profilePicture });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
