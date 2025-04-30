@@ -193,6 +193,7 @@ import Dashbord from "../dashbord";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserChat, sendMessage } from "@/redux/action/userAction";
 import { useRouter } from "next/router";
+import { baseURL } from "@/config";
 
 export default function UserId() {
   const [message, setMessage] = useState("");
@@ -262,7 +263,7 @@ export default function UserId() {
             >
               Back
             </button>
-            <img src="" alt="" />
+            <img src={`${baseURL}/${userState.chatUserImage}`} alt="" />
             <div>
               <h3>@{userState.chatusername}</h3>
               <p>Online</p>

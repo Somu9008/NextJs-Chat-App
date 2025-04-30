@@ -4,6 +4,7 @@
   position: fixed;
   z-index: 1;
   width: 50%;
+  margin-top: 2rem;
 }
 
 .chat {
@@ -28,6 +29,12 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.chat_user img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
 }
 
 .chat_user div p {

@@ -7,6 +7,7 @@ import {
   getMyConnectionRequest,
   whatareMyConnectionrequests,
 } from "@/redux/action/userAction";
+import { baseURL } from "@/config";
 
 export default function index() {
   const userState = useSelector((state) => state.user);
@@ -26,7 +27,7 @@ export default function index() {
           if (user.isContected == false) {
             return (
               <div className={style.userRequest}>
-                <img src="" alt="" />
+                <img src={`${baseURL}/${user.userId.profilePicture}`} alt="" />
                 <div className={style.userRequestInfo}>
                   <h4>@{user.userId.username}</h4>
                 </div>

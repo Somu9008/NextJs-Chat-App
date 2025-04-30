@@ -18,6 +18,7 @@ export default function Navbar() {
   const router = useRouter();
 
   useEffect(() => {
+    console.log(userState);
     dispatch(uploadProfilePicture({ profilePicture: profilePicture }));
   }, [profilePicture]);
 

@@ -74,7 +74,7 @@ nav .userProfile {
   /* border: 1px solid red; */
   position: relative;
   display: flex;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 20rem;
   align-items: center;
   justify-content: space-around;

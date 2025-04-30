@@ -39,6 +39,12 @@
   margin: 1rem;
 }
 
+.userRequest img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
 .userRequest button {
   background-color: rgb(116, 111, 111);
   padding-inline: 0.5rem;

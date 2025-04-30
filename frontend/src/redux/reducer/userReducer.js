@@ -25,6 +25,7 @@ const initialState = {
   userChat: [],
   chatusername: "",
   chatUserId: "",
+  chatUserImage: "",
   isShow: false,
 };
 
@@ -94,9 +95,11 @@ const userSlice = createSlice({
         state.userChat = action.payload.userChat;
         state.chatusername = action.payload.user?.username;
         state.chatUserId = action.payload.user?._id;
+        state.chatUserImage = action.payload.image;
       })
       .addCase(uploadProfilePicture.fulfilled, (state, action) => {
         state.message = action.payload.message;
+        state.userInfo.profilePicture = action.payload.image;
       });
   },
 });
